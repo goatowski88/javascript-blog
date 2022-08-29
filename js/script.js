@@ -6,14 +6,35 @@ document.getElementById('test-button').addEventListener('click', function(){
 });*/
 
 const titleClickHandler = function(event){
+  event.preventDefault();
+  const clickedElement = this;
   console.log('Link was clicked!');
   console.log(event);
 
-  /* remove class 'active' from all article links  */
+  /* [DONE] remove class 'active' from all article links  */
 
-  /* add class 'active' to the clicked link */
+const activeLinks = document.querySelectorAll('.titles a.active');
 
-  /* remove class 'active' from all articles */
+for(let activeLink of activeLinks){
+  activeLink.classList.remove('active');
+  console.log('Remove active link!');
+}
+
+  /* [IN PROGRESS] add class 'active' to the clicked link */
+
+clickedElement.classList.add('active');
+console.log('Add active link!');
+
+console.log('clickedElement:', clickedElement);
+
+  /* [DONE] remove class 'active' from all articles */
+
+const activeArticles = document.querySelectorAll('.posts active');
+console.log('Find active post');
+
+for(let activeArticle of activeArticles){
+  activeArticle.classList.remove('active');
+}
 
   /* get 'href' attribute from the clicked link */
 
